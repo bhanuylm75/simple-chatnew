@@ -26,7 +26,7 @@ const Sidebar = ({session}) => {
 
   const allusers = async () => {
   try{
-    const res=await axios.get("http://localhost:3000/api/getallusers")
+    const res=await axios.get("api/getallusers")
     const rawusers = res?.data?.map((user) => JSON.parse(user));
   
     const users=rawusers.filter((user)=>(user.id!=sessionId))
